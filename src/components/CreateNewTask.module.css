@@ -1,0 +1,26 @@
+.taskForm {
+  margin: 0 auto;
+  width: fit-content;
+  transform: translateY(-50%);
+  margin-bottom: 4rem;
+}
+
+.taskInput {
+  background: var(--gray-500);
+  border: 1px solid var(--gray-700);
+  height: 3.375rem;
+  width: 39.875rem;
+  box-sizing: border-box;
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.taskButton {
+  background: var(--sky-700);
+  color: var(--white);
+  height: 3.25rem;
+  width: 5.625rem;
+  border-radius: 8px;
+  margin-left: 0.5rem;
+  border: none;
+}

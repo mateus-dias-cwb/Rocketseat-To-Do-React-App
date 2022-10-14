@@ -21,7 +21,7 @@ export function CreateNewTask({onCreateNewTask}: CreateNewTask) {
   }
 
   return (
-    <form className={styles.taskFom} onSubmit={handleCreateNewTask}>
+    <form className={styles.taskForm} onSubmit={handleCreateNewTask}>
       <input 
         className={styles.taskInput}
         type="text"

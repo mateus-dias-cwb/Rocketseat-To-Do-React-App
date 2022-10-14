@@ -15,14 +15,14 @@ export function App() {
   const [tasks, setTasks] = useState([
     {
       id: uuidv4(),
-      content: 'Lorem ipsum dolor sit, amet consectetur adipisicing elit. Consequatur, cum.',
-      done: true
+      content: 'Integer urna interdum massa libero auctor neque turpis turpis semper. Duis vel sed fames integer.',
+      done: false
     }
   ])
 
   function toggleTask(id: string) {
-    const newTasks = tasks.filter(item => {
-      if (id === item.id) {
+    const newTasks = tasks.map(item => {
+      if (id == item.id) {
         return ({
           id: item.id,
           content: item.content,
@@ -59,17 +59,17 @@ export function App() {
       
       <CreateNewTask onCreateNewTask={createNewTask}/>
 
-      <main className={styles.main}>
+      <main className={styles.tasksDisplay}>
 
         <section className={styles.infoBar}>
-          <div className={styles.createdTasksDisplay}>
-            <span className={styles.createdTasksLabel}>Tarefas criadas</span>
-            <div className={styles.createdTasksNumber}>0</div>
+          <div className={styles.counter}>
+            <strong>Tarefas criadas</strong>
+            <span>0</span>
           </div>
 
-          <div className={styles.completedTasksDisplay}>
-            <span className={styles.completedTasksLabel}>Tarefas criadas</span>
-            <div className={styles.completedTasksNumber}>0</div>
+          <div className={styles.counter}>
+            <strong>Concluídas</strong>
+            <span>0</span>
           </div>
         </section>
 
@@ -77,7 +77,7 @@ export function App() {
 
           {tasks.length === 0 &&
             <div className={styles.emptyList}>
-              <ClipboardText/>
+              <ClipboardText weight="thin" size={70}/>
               <strong>Você ainda não tem tarefas cadastradas</strong>
               <span>Crie tarefas e organize seus itens a fazer</span>
             </div> 

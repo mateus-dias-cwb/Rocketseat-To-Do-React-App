@@ -1,5 +1,5 @@
 
-import { Trash } from 'phosphor-react';
+import { Check, Circle, Trash } from 'phosphor-react';
 import styles from './Task.module.css'
 
 interface Task {
@@ -12,6 +12,8 @@ interface Task {
 
 export function Task({id, content, done, onToggleTask, onDeleteTask}:Task) {
 
+  console.log({id, done})
+
   function handleToggleTask() {
     onToggleTask(id)
   }
@@ -21,8 +23,13 @@ export function Task({id, content, done, onToggleTask, onDeleteTask}:Task) {
   }
 
   return (
-    <article className={styles.task + (done ?? styles.taskDone)}>
-      <input type="checkbox" name="taskToggler" onClick={handleToggleTask} />
+    <article className={`${styles.task}  ${done ? styles.taskDone : ''}`}>
+      <label>
+        <input type="checkbox" name="taskToggler" onClick={handleToggleTask} />
+        <Circle weight="light"/>
+        <Circle weight="duotone"/>
+        <Check weight="bold"/>
+      </label>
       <p>{content}</p>
       <button title='Deletar tarefa' onClick={handleDeleteTask}>
         <Trash size={20}/>
